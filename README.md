@@ -23,8 +23,7 @@
 
 
 ##Data Collection  
-[![1](https://img.shields.io/badge/ipython notebook-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/finaldata/data_collection.ipynb)
-
+[![1](https://img.shields.io/badge/ipython notebook-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/finaldata/data_collection.ipynb)  
 I will download data from Airbnb webpage which has datasets across countries for multiple cities. After cleaning the raw data, I will concat all datasets in a CSV file.
 
 ###Get the Data
@@ -127,6 +126,6 @@ In this analysis I will take a look at the number of reviews vs price. To do thi
 The result shows the more expensive a listing is the lower number of reviews are!
 
 ##Conclusion
-If you want to host an airbnb do it in San francisco, get a place with one bedroom and one bathroom, decrease the price in winter and don't get too excited with positive reviews!
+If you want to host an airbnb do it in San francisco, get a place with one bedroom and one bathroom, decrease the price in winter and don't get too excited about positive reviews!
 
 
