@@ -3,7 +3,7 @@
 ![ish_wc_boston4](https://cloud.githubusercontent.com/assets/14946935/21078285/701a0a28-bf37-11e6-813f-f97008a4caab.jpg)
 
 
-#####What can we learn about Airbnb rentals by modeling the prices, number of listings, and reviews written by guests? In this project I do a simple analysis on Airbnb dataset available on [Airbnb Website](http://insideairbnb.com/get-the-data.html)
+#####What can we learn about Airbnb rentals by modeling the prices, number of listings, and reviews written by guests? In this project I do a simple analysis on Airbnb dataset available on [Airbnb Website](http://insideairbnb.com/get-the-data.html).
 
 
 ##Table of contents
@@ -22,14 +22,13 @@
   * [Conclusion](#conclusion)
 
 
-##Data Collection
-[![ipython](https://img.shields.io/github/watchers/badges/shields.svg?style=social&label=IPython Notebook)](https://github.com/mesfe/python_finalexam/blob/master/finaldata/data_collection.ipynb)
-
+##Data Collection  
+[![1](https://img.shields.io/badge/ipython notebook-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/finaldata/data_collection.ipynb)
 
 I will download data from Airbnb webpage which has datasets across countries for multiple cities. After cleaning the raw data, I will concat all datasets in a CSV file.
 
 ###Get the Data
-
+[![2](https://img.shields.io/badge/python file-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/finaldata/download_data.py)  
 I use `urllib` library to scrape the [webpage](http://insideairbnb.com/get-the-data.html) and download all csv.gz file. User can filter the download by country name in the command line with `download_data.py -c --country`. For example to get the files only for **United States**:  
 
 
@@ -40,13 +39,13 @@ $ python download_data.py -c united-states
 ```
 
 ###Concat the Data
-
+[![3](https://img.shields.io/badge/python file-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/finaldata/concat_data.py)  
 Here we concat all csv files across all cities for different file types. There are three types of files for each city: Listings, Reviews and Calendar. I save data in these three files: [listing_all.csv](https://github.com/mesfe/python_finalexam/blob/master/finaldata/listing_all_sample.csv), [reviews_all.csv](https://github.com/mesfe/python_finalexam/blob/master/finaldata/reviews_all_sample.csv), [calendar_all.csv](https://github.com/mesfe/python_finalexam/blob/master/finaldata/calendar_all_sample.csv).
 
 
 
 ###Data Cleansing
-
+[![4](https://img.shields.io/badge/python file-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/finaldata/data_cleansing.py)  
 I do data cleansing on listing_all.csv:  
 
    * converting price datatype to int. Some of the prices is saved with dollar signs and commas  
@@ -58,8 +57,8 @@ The dataframe is saved in [listing_all_clean.csv](https://github.com/mesfe/pytho
 
 
 ##Analysis
-###Price Modeling
-
+###Price Modeling  
+[![5](https://img.shields.io/badge/ipython notebook-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis1/Analysis1.ipynb) [![10](https://img.shields.io/badge/python file-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis1/Analysis1.py) [![11](https://img.shields.io/badge/csv file-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis1/coefs.csv)   
 In this analysis I calculate coeficients for price to see how different variables such as amenities and location effect the price
 I use `sklearn` library to calculate coeficients. I will consider the effect of location and effect of amenities on the price.
 
@@ -84,13 +83,15 @@ According to this analysis it's not always the case that more amenities is alway
 
 
 ###Bedrooms and Bathrooms
+[![6](https://img.shields.io/badge/ipython notebook-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis2/Analysis2.ipynb) [![12](https://img.shields.io/badge/python file-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis2/Analysis2.py) [![13](https://img.shields.io/badge/csv file-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis2/listing_bed_bath.csv)   
 In this analysis I look at the market in terms of bedrooms and bathroom provided. To get the data set I first get the count of listings for the number of bathrooms and bedrooms and then pivot that table. Here is the heatmap for the dataframe filtered for bedrooms less than 5 and bathrooms less than 4:
 
 <img width="800" alt="heatmap" src="https://github.com/mesfe/python_finalexam/blob/master/Analysis2/heatmap.png" >
 
 Not surprisingly housing availability is clustered around the 1 bed 1 bath.
 
-###Sentiment Analysis  
+###Sentiment Analysis
+[![7](https://img.shields.io/badge/ipython notebook-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis3/Analysis3.ipynb) [![14](https://img.shields.io/badge/python file-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis3/Analysis3.py) [![15](https://img.shields.io/badge/csv file-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis3/boston_polarity_scores.csv)   
 In this analysis I will do sentiment analysis on reviews table. To do sentiment analysis I will use COMMENTS column of Reviews table. So first filter data to get the not null values and also values for specific city given by user through command line with  with `analysis3.py -c --cityvar`.For example to do sentiment analysis for **Boston**:  
 
 
@@ -106,7 +107,7 @@ According to this analysis almost none of the texts are classified as having sig
 In fact, a significant amount of them are given exactly 0.0 negativity. Although the compound score is supposed to be the best estimate of overall sentiment , the fact that negativities are ranked so lowly hints that we're doing a not so great job with this.
 
 ###Price vs Time
-
+[![8](https://img.shields.io/badge/ipython notebook-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis4/Analysis4.ipynb) [![16](https://img.shields.io/badge/python file-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis4/Analysis4.ipynb) [![17](https://img.shields.io/badge/csv file-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis4/price_month.csv)  
 In this analysis I analyze the prices from calendar table for different months. To do this I group by prices for different months from calendar table.
 
 <img width="900" alt="month_price" src="https://cloud.githubusercontent.com/assets/14946935/21078215/4f3fafe4-bf35-11e6-9673-249fba454f5c.png">
@@ -118,7 +119,7 @@ And here is a bar chart to show the results.
 Looks like in the colder months the price is lower!
 
 ###Number of Reviews vs Price
-
+[![9](https://img.shields.io/badge/ipython notebook-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis5/Untitled.ipynb) [![18](https://img.shields.io/badge/python file-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis5/Analysis5.py) [![19](https://img.shields.io/badge/csv file-Yes-green.svg)](https://github.com/mesfe/python_finalexam/blob/master/Analysis5/price_reviews.csv)  
 In this analysis I will take a look at the number of reviews vs price. To do this first I count the number of listings from reviews table. Then I get the mean price for each listing from listings table, then merge these two dataframes. I will show the reaults in a scatter plot.
 
 <img width="800" alt="scatter" src="https://github.com/mesfe/python_finalexam/blob/master/Analysis5/scatterplot.png" >
