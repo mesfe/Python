@@ -2,6 +2,13 @@
 ##Command Line Arguments
 ----------------------
 
+.. class:: no-web
+
+    .. image:: https://github.com/mesfe/python_finalexam/blob/master/Analysis1/cities_coefs.png
+        :alt: HTTPie compared to cURL
+        :width: 100%
+        :align: center
+
 -------->download_data.py:
 
 Example: python ./download_data.py -c united-states -f 2016-10-20 -t 2016-12-20
