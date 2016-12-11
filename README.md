@@ -23,6 +23,8 @@
 
 
 ##Data Collection
+[![ipython](https://img.shields.io/github/watchers/badges/shields.svg?style=social&label=IPython Notebook)](https://github.com/mesfe/python_finalexam/blob/master/finaldata/data_collection.ipynb)
+
 
 I will download data from Airbnb webpage which has datasets across countries for multiple cities. After cleaning the raw data, I will concat all datasets in a CSV file.
 
